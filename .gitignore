@@ -1,32 +1,195 @@
-# Prerequisites
-*.d
+#include <iostream>
+#include <string>
+#include <ctime>
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+using namespace std;
 
-# Precompiled Headers
-*.gch
-*.pch
+int main()
+{
+    setlocale(0, "");
+    int i = 0; //Первый игрок
+    int a = 0; //Второй игрок
+    int limit1;
+    int limit2;
+    int limit3;
+    int kol1 = 0;
+    int kol2 = 0;
+    int kol3 = 0;
+    int otvet1;
+    char name1[10];
+    char name2[10];
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+    cout << "Введите имя первого игрока: ";
+    cin >> name1;
 
-# Fortran module files
-*.mod
-*.smod
+    cout << "Введите имя второго игрока: ";
+    cin >> name2;
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+    cout << "Введите количество примеров на сложение: ";
+    cin >> limit1;
 
-# Executables
-*.exe
-*.out
-*.app
+    cout << "Введите количество примеров на вычитание: ";
+    cin >> limit2;
+
+    cout << "Введите количество примеров на умножение: ";
+    cin >> limit3;
+  
+
+    if (limit1 >= 1)
+    {
+        while (kol1 < limit1)
+        {
+            kol1++;
+
+            cout << "Вопрос для игрока " << name1 << ": " << endl;
+
+            srand(time(0));
+
+            int chislo11 = rand() % 100 + 1;
+            int chislo12 = rand() % 100 + 1;
+
+            int potvet11 = chislo11 + chislo12;
+            cout << chislo11 << " + " << chislo12 << " = " << endl;
+            cin >> otvet1;
+            if (otvet1 == potvet11)
+            {
+                cout << "Игрок " << name1 << " получает +1 балл." << endl;
+                i++;
+            }
+            else
+            {
+                cout << "Ответ неверный.";
+            }
+
+            cout << "Вопрос для игрока " << name2 << ": " << endl;
+
+            srand(time(0));
+
+            int chislo21 = rand() % 100 + 1;
+            int chislo22 = rand() % 100 + 1;
+
+            int potvet21 = chislo21 + chislo22;
+            cout << chislo21 << " + " << chislo22 << " = " << endl;
+            cin >> otvet1;
+            if (otvet1 == potvet21)
+            {
+                cout << "Игрок " << name2 << " получает +1 балл." << endl;
+                a++;
+            }
+            else
+            {
+                cout << "Ответ неверный.";
+            }
+        }
+    }
+
+    if (limit2>=1)
+    {
+        while (kol2 < limit2) {
+            kol2++;
+
+            cout << "Вопрос для игрока " << name1 << ": " << endl;
+
+            srand(time(0));
+
+            int chislo11 = rand() % 100 + 1;
+            int chislo12 = rand() % 100 + 1;
+
+            int potvet11 = chislo11 - chislo12;
+            cout << chislo11 << " - " << chislo12 << " = " << endl;
+            cin >> otvet1;
+            if (otvet1 == potvet11)
+            {
+                cout << "Игрок " << name1 << " получает +1 балл." << endl;
+                i++;
+            }
+            else
+            {
+                cout << "Ответ неверный.";
+            }
+
+            cout << "Вопрос для игрока " << name2 << ": " << endl;
+
+            srand(time(0));
+
+            int chislo21 = rand() % 100 + 1;
+            int chislo22 = rand() % 100 + 1;
+
+            int potvet21 = chislo21 - chislo22;
+            cout << chislo21 << " - " << chislo22 << " = " << endl;
+            cin >> otvet1;
+            if (otvet1 == potvet21)
+            {
+                cout << "Игрок " << name2 << " получает +1 балл." << endl;
+                a++;
+            }
+            else
+            {
+                cout << "Ответ неверный.";
+            }
+        }
+    }
+
+    if (limit3 >= 1)
+    {
+        while (kol3 < limit3) {
+            kol3++;
+
+            cout << "Вопрос для игрока " << name1 << ": " << endl;
+
+            srand(time(0));
+
+            int chislo11 = rand() % 30 + 1;
+            int chislo12 = rand() % 30 + 1;
+
+            int potvet11 = chislo11 * chislo12;
+            cout << chislo11 << " * " << chislo12 << " = " << endl;
+            cin >> otvet1;
+            if (otvet1 == potvet11)
+            {
+                cout << "Игрок " << name1 << " получает +1 балл." << endl;
+                i++;
+            }
+            else
+            {
+                cout << "Ответ неверный.";
+            }
+
+            cout << "Вопрос для игрока " << name2 << ": " << endl;
+
+            srand(time(0));
+
+            int chislo21 = rand() % 30 + 1;
+            int chislo22 = rand() % 30 + 1;
+
+            int potvet21 = chislo21 * chislo22;
+            cout << chislo21 << " * " << chislo22 << " = " << endl;
+            cin >> otvet1;
+            if (otvet1 == potvet21)
+            {
+                cout << "Игрок " << name2 << " получает +1 балл." << endl;
+                a++;
+            }
+            else
+            {
+                cout << "Ответ неверный.";
+            }
+        }
+    }
+
+
+
+    if (i>a)
+    {
+        cout << "Игрок "<< name1 <<" - победил!" << endl;
+    }
+    else if (i==a)
+    {
+        cout << "Ничья!" << endl;
+    }
+    else if (a>i)
+    {
+        cout << "Игрок " << name2 << " - победил!" << endl;
+    }
+    cout << "Спасибо за игру " << name1 << " и " << name2 << "!" << endl;
+}

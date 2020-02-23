@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    setlocale(0, "");
+    setlocale(LC_ALL, "Russian");
     int i = 0; //Первый игрок
     int a = 0; //Второй игрок
     int limit1;
